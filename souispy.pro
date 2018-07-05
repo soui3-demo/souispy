@@ -7,14 +7,8 @@ TARGET = souispy
 CONFIG(x64){
 TARGET = $$TARGET"64"
 }
-DEPENDPATH += .
-INCLUDEPATH += . \
-			   ../../utilities/include \
-			   ../../soui/include \
-			   ../../components \
-			   
-dir = ../..
-include($$dir/common.pri)
+
+include($$(SOUIPATH)/demo_com.pri)
 
 CONFIG(debug,debug|release){
 	LIBS += utilitiesd.lib souid.lib
