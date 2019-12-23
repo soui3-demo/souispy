@@ -4,11 +4,11 @@
 
 cmake_minimum_required(VERSION 3.4.3)
 project(souispy)
-file (TO_CMAKE_PATH "$ENV{SOUIPATH}" SOUI_ROOT)
+file (TO_CMAKE_PATH "$ENV{SOUI3PATH}" SOUI_ROOT)
 
 message(STATUS "SOUI_ROOT: ${SOUI_ROOT}")
 if ("${SOUI_ROOT}" STREQUAL "")
-	message(FATAL_ERROR "FATAL:can't find env variable SOUIPATH, clone soui core and install wizard first, please.")
+	message(FATAL_ERROR "FATAL:can't find env variable SOUI3PATH, clone soui core and install wizard first, please.")
 endif()
 
 include(${SOUI_ROOT}/__cmake/cotire.cmake)
@@ -51,7 +51,7 @@ add_executable(souispy WIN32 ${CURRENT_HEADERS} ${CURRENT_SRCS} ${CURRENT_SOUIS}
 #add_dependencies(souispy soui-sys-resource)
 #target_link_libraries(souispy soui utilities ${COM_LIBS})
 target_link_libraries(souispy
-        debug souid optimized soui
+        debug soui3d optimized soui3
         debug utilitiesd optimized utilities
 )
 

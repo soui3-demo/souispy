@@ -39,7 +39,7 @@ namespace SOUI
     void SCaptureButton::OnPaint( IRenderTarget *pRT )
     {
         if(!m_pBgSkin) return;
-        m_pBgSkin->Draw(pRT,GetWindowRect(),IsChecked()?1:0);
+        m_pBgSkin->DrawByState(pRT,GetWindowRect(),IsChecked()?1:0);
     }
 
     CSize SCaptureButton::GetDesiredSize( LPCRECT pRcContainer )
