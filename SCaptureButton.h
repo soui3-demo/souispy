@@ -32,7 +32,7 @@ namespace SOUI
         ~SCaptureButton(void);
 
     protected:
-        virtual CSize GetDesiredSize(LPCRECT pRcContainer);  
+        virtual CSize GetDesiredSize(int nWid,int nHei);  
         
         BOOL IsChecked();      
     protected:
